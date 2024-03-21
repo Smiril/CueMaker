@@ -23,10 +23,21 @@ else:
     trecursive = raw_input("Search Recursive? ["+str(recursive)+"]:").strip().title() or recursive
     recursive = trecursive in trues
 
-# Define cue file
-cue = r"""FILE "%FILENAME%" BINARY
-TRACK 01 MODE1/2352
-INDEX 01 00:00:00"""
+# Get input
+rawor = ("Raw", "R", True)
+rawno = ("Truncated","T", False)
+mary = input("Please enter Raw or Truncated [R/T]:")
+if (mary, not rawno):
+    # Define cue file
+    cue = r"""FILE "%FILENAME%" BINARY
+    TRACK 01 MODE1/2352
+    INDEX 01 00:00:00"""
+else:
+    # Define cue file
+    cue = r"""FILE "%FILENAME%" BINARY
+    TRACK 01 MODE1/2336
+    INDEX 01 00:00:00"""
+
 
 # For each (sub)folder
 for (dirpath, dirnames, filenames) in walk(mypath):
