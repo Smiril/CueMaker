@@ -31,13 +31,13 @@ else:
 
 # Define cue file
 cue1 = r"""FILE "%TRACK1%" BINARY
-TRACK 01 MODE1/2352
-INDEX 01 00:00:00"""
+  TRACK 01 MODE1/2352
+    INDEX 01 00:00:00"""
 cue2 = r"""
 FILE "%TRACK2%" BINARY
-TRACK 02 AUDIO
-INDEX 00 00:00:00
-INDEX 01 00:02:00"""
+  TRACK 02 AUDIO
+    INDEX 00 00:00:00
+    INDEX 01 00:02:00"""
 
 # For each (sub)folder
 for (dirpath, dirnames, filenames) in walk(mypath):
