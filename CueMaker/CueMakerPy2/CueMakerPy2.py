@@ -16,8 +16,8 @@ recursive = True
 
 # Get input
 trues = ("Y", "Yes", "True", "T", True)
-rawt = ("Y", "Yes", "True", "T", True)
-rawf = ("N", "No", "False", "F", False)
+rawt = ("Y", "Yes", "True", "R", True)
+rawf = ("N", "No", "False", "T", False)
 if (sys.version_info > (3, 0)):
     #py3 code
     mypath = input("Please enter path to scan ["+mypath+"]:") or mypath
