@@ -22,19 +22,19 @@ if (sys.version_info > (3, 0)):
     #py3 code
     mypath = input("Please enter path to scan ["+mypath+"]:") or mypath
     trecursive = input("Search Recursive? ["+str(recursive)+"]:").strip().title() or recursive
-    traw = input("Raw or Truncated? [R/T]:") or rawt
+    traw = input("Raw or Truncated? [R/T]:")
     filenamex = input("Please enter Project Name [filename]:")
     recursive = trecursive in trues
 else:
     #py2 code
     mypath = raw_input("Please enter path to scan ["+mypath+"]:") or mypath
     trecursive = raw_input("Search Recursive? ["+str(recursive)+"]:").strip().title() or recursive
-    traw = raw_input("Raw or Truncated? [R/T]:") or rawt
+    traw = raw_input("Raw or Truncated? [R/T]:")
     filenamex = raw_input("Please enter Project Name [filename]:")
     recursive = trecursive in trues
 
 
-if (not rawf):
+if (traw == rawt):
     # Define cue file
     cue1 = r"""FILE "%TRACK1%" BINARY
   TRACK 01 MODE1/2352
@@ -44,7 +44,7 @@ else:
     cue1 = r"""FILE "%TRACK1%" BINARY
   TRACK 01 MODE1/2336
     INDEX 01 00:00:00"""
-
+    
 cue2 = r"""
 FILE "%TRACK2%" BINARY
   TRACK 02 AUDIO
