@@ -77,9 +77,9 @@ for (dirpath, dirnames, filenames) in walk(mypath):
                     else:
                         print("no match!")
                         
-            fileHandle.close()
-                # Output write
-            print("Cue created: " + savePath)
+    fileHandle.close()
+    # Output write
+    print("Cue created: " + savePath)
                 
     # If they dont want to go recursive, get out
     if not recursive:
