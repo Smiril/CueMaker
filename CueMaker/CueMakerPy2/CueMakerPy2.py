@@ -9,6 +9,10 @@ import re
 
 patterns1 = ['Track 1']
 patterns2 = ['Track 2']
+patterns3 = ['Track 3']
+patterns4 = ['Track 4']
+patterns5 = ['Track 5']
+patterns6 = ['Track 6']
 # Define path to search
 # mypath is a literal string so you dont have to escape path
 mypath = r"./roms";
@@ -51,6 +55,31 @@ FILE "%TRACK2%" BINARY
     INDEX 00 00:00:00
     INDEX 01 00:02:00"""
 
+cue3 = r"""
+FILE "%TRACK3%" BINARY
+  TRACK 03 AUDIO
+    INDEX 00 00:00:00
+    INDEX 01 00:02:00"""
+
+cue4 = r"""
+FILE "%TRACK4%" BINARY
+  TRACK 04 AUDIO
+    INDEX 00 00:00:00
+    INDEX 01 00:02:00"""
+
+cue5 = r"""
+FILE "%TRACK5%" BINARY
+  TRACK 05 AUDIO
+    INDEX 00 00:00:00
+    INDEX 01 00:02:00"""
+
+cue6 = r"""
+FILE "%TRACK6%" BINARY
+  TRACK 06 AUDIO
+    INDEX 00 00:00:00
+    INDEX 01 00:02:00"""
+
+
 # For each (sub)folder
 for (dirpath, dirnames, filenames) in walk(mypath):
     # For each file
@@ -65,20 +94,45 @@ for (dirpath, dirnames, filenames) in walk(mypath):
                 # None found, create one
                 savePath = os.path.join(dirpath,filenamex+ ".cue")
                 fileHandle = open(savePath, "a")
-                for i in patterns1:
-                    if re.search (i, file):
+                for k1 in patterns1:
+                    if re.search (k1, file):
                         fileHandle.write(cue1.replace("%TRACK1%", file))
                     else:
                         break
-                        
-                for k in patterns2:
-                    if re.search (k, file):
+                
+                for k2 in patterns2:
+                    if re.search (k2, file):
                         fileHandle.write(cue2.replace("%TRACK2%", file))
                     else:
                         break
                         
+                for k3 in patterns3:
+                    if re.search (k3, file):
+                        fileHandle.write(cue3.replace("%TRACK3%", file))
+                    else:
+                        break
+                                        
+                for k4 in patterns4:
+                    if re.search (k4, file):
+                        fileHandle.write(cue4.replace("%TRACK4%", file))
+                    else:
+                        break
+                        
+                for k5 in patterns5:
+                    if re.search (k5, file):
+                        fileHandle.write(cue5.replace("%TRACK5%", file))
+                    else:
+                        break
+                                                        
+                for k6 in patterns6:
+                    if re.search (k6, file):
+                        fileHandle.write(cue6.replace("%TRACK6%", file))
+                    else:
+                        break
+
+
     fileHandle.close()
-    # Output write
+                # Output write
     print("Cue created: " + savePath)
                 
     # If they dont want to go recursive, get out
