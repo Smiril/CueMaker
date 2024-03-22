@@ -69,13 +69,13 @@ for (dirpath, dirnames, filenames) in walk(mypath):
                     if re.search (i, file):
                         fileHandle.write(cue1.replace("%TRACK1%", file))
                     else:
-                        print("no match!")
+                        break
                         
                 for k in patterns2:
                     if re.search (k, file):
                         fileHandle.write(cue2.replace("%TRACK2%", file))
                     else:
-                        print("no match!")
+                        break
                         
     fileHandle.close()
     # Output write
