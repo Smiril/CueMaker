@@ -98,37 +98,37 @@ for (dirpath, dirnames, filenames) in walk(mypath):
                     if re.search (k1, file):
                         fileHandle.write(cue1.replace("%TRACK1%", file))
                     else:
-                        break
+                        continue
                 
                 for k2 in patterns2:
                     if re.search (k2, file):
                         fileHandle.write(cue2.replace("%TRACK2%", file))
                     else:
-                        break
+                        continue
                         
                 for k3 in patterns3:
                     if re.search (k3, file):
                         fileHandle.write(cue3.replace("%TRACK3%", file))
                     else:
-                        break
+                        continue
                                         
                 for k4 in patterns4:
                     if re.search (k4, file):
                         fileHandle.write(cue4.replace("%TRACK4%", file))
                     else:
-                        break
+                        continue
                         
                 for k5 in patterns5:
                     if re.search (k5, file):
                         fileHandle.write(cue5.replace("%TRACK5%", file))
                     else:
-                        break
+                        continue
                                                         
                 for k6 in patterns6:
                     if re.search (k6, file):
                         fileHandle.write(cue6.replace("%TRACK6%", file))
                     else:
-                        break
+                        continue
 
 
     fileHandle.close()
