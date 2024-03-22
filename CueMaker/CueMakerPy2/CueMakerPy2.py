@@ -34,16 +34,16 @@ else:
     recursive = trecursive in trues
 
 
-if (traw , not rawf):
+if (not rawf):
     # Define cue file
     cue1 = r"""FILE "%TRACK1%" BINARY
-        TRACK 01 MODE1/2352
-            INDEX 01 00:00:00"""
+  TRACK 01 MODE1/2352
+    INDEX 01 00:00:00"""
 else:
     # Define cue file
     cue1 = r"""FILE "%TRACK1%" BINARY
-        TRACK 01 MODE1/2336
-            INDEX 01 00:00:00"""
+  TRACK 01 MODE1/2336
+    INDEX 01 00:00:00"""
 
 cue2 = r"""
 FILE "%TRACK2%" BINARY
